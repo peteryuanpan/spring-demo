@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>象棋小巫师登陆界面</title>
+    <link href="styles/bootstrap.min.css" rel="stylesheet">
+    <link href="styles/signin.css" rel="stylesheet">
+    <script charset="UTF-8">
+        function login() {
+            var xhr = new XMLHttpRequest()
+            xhr.open('post', 'login')
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+            var username = document.getElementById("username").value
+            var password = document.getElementById("password").value
+            xhr.send("username=" + username + "&password=" + password)
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    // 设置cookie
+                    var jr = JSON.parse(xhr.responseText)
+                    document.cookie = "loginToken" + "=" + jr.token
+                    // 将地址替换成新 url，该方法通过指定 URL 替换当前缓存在历史里（客户端）的项目
+                    // 因此当使用 replace 方法之后，你不能通过"前进"和"后退"来访问已经被替换的URL，这个特点对于做一些过渡页面非常有用！
+                    window.location.replace("index.html")
+                } else if (xhr.readyState == 4 && xhr.status != 200) {
+                    // 弹出异常
+                    var jr = JSON.parse(xhr.responseText)
+                    alert("http异常, readyState: " + xhr.readyState + ", status: " + xhr.status + ", message: " + jr.msg)
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+    <form class="form-signin" method="post" action="/login">
+        <h2 class="form-signin-heading">象棋小巫师</h2>
+        <p>
+            <label for="username" class="sr-only">Username</label>
+            <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
+        </p>
+        <p>
+            <label for="password" class="sr-only">Password</label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+        </p>
+        <!--        <input name="_csrf" type="hidden" value="e6295f47-7983-45f2-bafe-22f5deb06588" />-->
+        <button class="btn btn-lg btn-primary btn-block" type="button" onclick="login()">Sign in</button>
+    </form>
+</div>
+</body>
+</html>

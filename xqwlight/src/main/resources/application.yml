@@ -1,0 +1,27 @@
+server:
+  port: 1001
+
+logging:
+  level:
+    root: info
+    com.peter.xqwlight: debug
+
+jwt:
+  secret: jwtSecretKey # JWT HS512 算法加密密钥
+  expiration: 86400 # 1天有效期，3600 * 24
+
+permission:
+  permitAllUrls:
+    - /login.html
+    - /styles/bootstrap.min.css
+    - /styles/signin.css
+  authenticatedUrls:
+    - /**/*.html
+    - /**/*.js
+    - /**/*.css
+    - /**/*.ico
+    - /**/*.jpg
+    - /**/*.png
+    - /**/*.gif
+    - /**/*.wav
+    - /ucci/*

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>象棋小巫师登陆界面</title>
+    <script charset="UTF-8">
+        function login() {
+            var xhr = new XMLHttpRequest()
+            xhr.open('post', 'login')
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+            var username = document.getElementById("username").value
+            var password = document.getElementById("password").value
+            xhr.send("username=" + username + "&password=" + password)
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    // 设置cookie
+                    var jr = JSON.parse(xhr.responseText)
+                    document.cookie = "loginToken" + "=" + jr.token
+                    // 将地址替换成新 url，该方法通过指定 URL 替换当前缓存在历史里（客户端）的项目
+                    // 因此当使用 replace 方法之后，你不能通过"前进"和"后退"来访问已经被替换的URL，这个特点对于做一些过渡页面非常有用！
+                    window.location.replace("index.html")
+                } else if (xhr.readyState == 4 && xhr.status != 200) {
+                    // 弹出异常
+                    var jr = JSON.parse(xhr.responseText)
+                    alert("http异常, readyState: " + xhr.readyState + ", status: " + xhr.status + ", message: " + jr.msg)
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<h2>象棋小巫师</h2>
+<hr>
+<div>
+    <form action="/login" method="post">
+        <input id="username" name="username"/>用户名<br>
+        <input id="password" name="password">密码<br/>
+        <button type="button" onclick="login()"/>登陆
+    </form>
+</div>
+</body>
+</html>
