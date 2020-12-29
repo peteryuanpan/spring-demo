@@ -18,6 +18,7 @@
     <modules>
         <module>springboot-mybatis-redis</module>
         <module>mybatis</module>
+        <module>xqwlight</module>
     </modules>
 
 </project>
