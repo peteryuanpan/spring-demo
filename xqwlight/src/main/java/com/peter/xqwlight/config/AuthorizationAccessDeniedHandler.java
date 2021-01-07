@@ -25,7 +25,7 @@ public class AuthorizationAccessDeniedHandler implements AccessDeniedHandler {
         // 获取 username
         String username = ConfigUtils.getUsername(request, null);
 
-        // 登陆失败后，返回401
+        // 鉴权失败后，返回403
         response.setStatus(HttpCode.ACCESS_DENIED.getCode());
         // 设置 content-type
         response.setContentType("application/json;charset=utf-8");

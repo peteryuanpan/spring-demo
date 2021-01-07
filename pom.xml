@@ -19,6 +19,8 @@
         <module>springboot-mybatis-redis</module>
         <module>mybatis</module>
         <module>xqwlight</module>
+        <module>springboot</module>
+        <module>springboot-condition</module>
     </modules>
 
 </project>
