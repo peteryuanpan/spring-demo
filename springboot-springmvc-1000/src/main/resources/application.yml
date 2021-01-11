@@ -1,0 +1,7 @@
+server:
+  port: 1000
+  tomcat:
+    threads:
+      minSpare: 10
+      max: 200
+    #maxConnections: 3
