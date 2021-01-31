@@ -11,7 +11,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>xqwlight</artifactId>
+    <artifactId>springboot-xqwlight-2000</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>

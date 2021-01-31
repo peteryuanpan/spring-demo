@@ -12,7 +12,7 @@ public class SimpleController {
     public String test1() {
         Thread thread = Thread.currentThread();
         System.out.println(thread.getName() + " /test1");
-        //sleep(10000);
+        sleep(100000);
         return "1";
     }
 

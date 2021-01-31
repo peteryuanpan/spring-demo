@@ -10,7 +10,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>springboot-springmvc</artifactId>
+    <artifactId>springboot-springmvc-1000</artifactId>
 
     <dependencies>
 

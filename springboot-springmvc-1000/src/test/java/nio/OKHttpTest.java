@@ -5,12 +5,21 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 public class OKHttpTest {
 
     static final String url0 = "http://localhost:1000/simple/test1";
     static final int MAX_N = 1;
-    static final OkHttpClient client = new OkHttpClient();
+    static OkHttpClient client;
+
+    static {
+        client = new OkHttpClient.Builder()
+            .connectTimeout(100, TimeUnit.SECONDS)
+            .writeTimeout(100, TimeUnit.SECONDS)
+            .readTimeout(100, TimeUnit.SECONDS)
+            .build();
+    }
 
     public static void main(String[] args) throws InterruptedException {
         Thread t = new Thread(() -> {

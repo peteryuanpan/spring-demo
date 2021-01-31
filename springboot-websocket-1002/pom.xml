@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.github.taven</groupId>
-	<artifactId>springboot-websocket</artifactId>
+	<artifactId>springboot-websocket-1002</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springboot-websocket</name>
+	<name>springboot-websocket-1002</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
