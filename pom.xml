@@ -24,6 +24,7 @@
         <module>springboot-springmvc-1000</module>
         <module>springboot-websocket-1002</module>
         <module>springboot-xqwlight-2000</module>
+        <module>springboot-tswork-2001</module>
         <module>zookeeper</module>
     </modules>
 

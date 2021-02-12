@@ -1,0 +1,9 @@
+server:
+  port: 2001
+
+qiniu:
+  tswork:
+    ak:
+    sk:
+    endpoint: https://tswork.peterpy.cn/
+    expires: 600 # seconds
