@@ -3,7 +3,7 @@ server:
 
 qiniu:
   tswork:
-    ak:
-    sk:
+    ak: ${tsworkAK}
+    sk: ${tsworkSK}
     endpoint: https://tswork.peterpy.cn/
     expires: 600 # seconds

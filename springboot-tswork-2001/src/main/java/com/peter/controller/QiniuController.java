@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/tswork")
-public class TsworkController {
+@RequestMapping("/qiniu")
+public class QiniuController {
 
-    private static final Logger LOG = LoggerFactory.getLogger(TsworkController.class);
+    private static final Logger LOG = LoggerFactory.getLogger(QiniuController.class);
 
     @Autowired
     private QiniuService qiniuService;
