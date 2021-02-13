@@ -19,6 +19,7 @@
         <module>dubbo-tuling</module>
         <module>mybatis</module>
         <module>netty</module>
+        <module>rocketmq-demo-tuling</module>
         <module>springboot-condition</module>
         <module>springboot-mybatis-redis-1001</module>
         <module>springboot-springmvc-1000</module>
